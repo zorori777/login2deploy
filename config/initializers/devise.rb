@@ -254,8 +254,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
     #中略
-    OAUTH_CONFIG = YAML.load_file("#{Rails.root}/config/settings.yml")[Rails.env].symbolize_keys!
-    config.omniauth :line, OAUTH_CONFIG[:line]['key'], OAUTH_CONFIG[:line]['secret']
+  config.omniauth :line, Rails.application.secrets.line_channel_id, Rails.application.secrets.line_channel_secret
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

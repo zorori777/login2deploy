@@ -22,3 +22,9 @@ vendor/
 public/
 tmp/
 vendor/
+settings.yml
+
+# Ignore encrypted secrets key file.
+config/secrets.yml.key
+
+.env
